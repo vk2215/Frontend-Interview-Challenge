@@ -25,7 +25,17 @@ export function WeekView({
 }: WeekViewProps) {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredAppointments = appointments.filter((appt) =>
+  // --- 🧩 TEMP FIX: safely handle patientName ---
+  // Some data might not have a `patientName` directly, so we fallback to a generic name.
+  const safeAppointments = appointments.map((appt) => ({
+    ...appt,
+    patientName:
+      (appt as any).patientName ||
+      (appt as any).patient?.name ||
+      "Unknown Patient",
+  }));
+
+  const filteredAppointments = safeAppointments.filter((appt) =>
     appt.patientName.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
