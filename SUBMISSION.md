@@ -26,15 +26,16 @@ Marked features have been implemented based on the requirements.
 - [x] Empty states
 - [x] Loading states
 - [x] Error handling
-- [ ] Appointment search/filter 
-- [ ] Dark mode 
-- [ ] Accessibility improvements 
+- [x] Appointment search/filter 
+- [x] Dark mode 
+- [x] Accessibility improvements 
 - [x] Other: **Custom Overlap Rendering** (Day View)
 
 ---
 ### State Management
 
 **Approach:** [x] Custom hooks (headless pattern)
+
 **Why?** The custom hook (`useAppointments`) centralizes all data fetching, filtering, loading, and error logic, providing a clean API for the `ScheduleView` component and keeping the UI layer lean.
 
 ---
