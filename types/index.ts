@@ -65,6 +65,7 @@ export interface Patient {
  * Appointment entity
  */
 export interface Appointment {
+  [x: string]: any;
   id: string;
   patientId: string;
   doctorId: string;
